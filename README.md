@@ -236,6 +236,8 @@ Calendar Matrix 2 Visual Title = "Analysis by Ad Type"
 
 ## Data Modelling
 
+<img width="1484" height="843" alt="Data Modelling SS" src="https://github.com/user-attachments/assets/79eb4ee1-e108-412d-82e6-4666c994a117" />
+
 A Snowflake Schema was created where:
 
 * Established a relationship between "campaigns" & "ads" tables with 'one to many' cardinality via "campaign_id" where the cross-filter direction is 'single'.
@@ -246,3 +248,25 @@ A Snowflake Schema was created where:
 
 ## Key Insights
 
+* **Facebook outperforms Instagram** across all major conversion-driving activities including clicks, engagements, comments, shares, and purchases, establishing it as the stronger channel for generating actions and revenue.
+* **Young female users (ages 20–35)** represent the most responsive demographic on both platforms, contributing the largest share of clicks, engagements, and purchases.
+* Ad performance decreases steadily after age 35, indicating a **narrower interest funnel for older audiences**.
+* **Europe and North America** show the highest user activity volume, making them the primary commercial opportunity regions.
+* **Stories** are the strongest ad format across CTR, engagement rate, and conversion rate, suggesting users respond best to immersive full-screen content.
+* Hourly trend analysis reveals **peak activity during evening hours (5 PM – 10 PM)**, indicating optimal placement timing.
+* Weekly trend analysis shows steady interaction growth mid-month, suggesting specific periods where user readiness to interact is higher.
+
+## Dashboard Structure
+
+The dashboard suite consists of three interactive pages:
+
+* **Facebook Dashboard** – Provides a full breakdown of Facebook performance across demographics, geography, time, and ad types.
+* **Instagram Dashboard** – Mirrors the Facebook view, enabling clear platform-to-platform comparison using identical metrics.
+* **Calendar Tooltip Page (Hidden)** – Displays KPI values at a daily granularity when users hover over the calendar heatmap, offering additional contextual detail.
+
+Each dashboard is equipped with user-controlled filters including dynamic KPI selection, campaign name, and audience target interests, allowing deeper analysis aligned with business objectives.
+
+## Business Recommendations
+
+* **Increase investment** in Facebook for campaigns prioritized toward conversions and purchase outcomes, as the platform demonstrates greater commercial effectiveness.
+* 
