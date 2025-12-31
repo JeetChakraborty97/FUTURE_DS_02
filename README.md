@@ -102,10 +102,137 @@ Shares = COUNTROWS(FILTER(ad_events, ad_events[event_type] = "Share"))
 Comments = COUNTROWS(FILTER(ad_events, ad_events[event_type] = "Comment"))
 ```
 * Engagements: 16.8K
+```DAX
+Engagements = [Shares] + [Clicks] + [Comments]
+```
 * Purchases: 708
+```DAX
+Purchases = COUNTROWS(FILTER(ad_events, ad_events[event_type] = "Purchase"))
+```
 * CTR (Click Through Rate): 11.86%
+```DAX
+CTR (Click Through Rate) = DIVIDE([Clicks], [Impressions], 0)
+```
 * Engagement Rate: 13.60%
+```DAX
+Engagement Rate = DIVIDE([Engagements], [Impressions], 0)
+```
 * Conversion Rate: 4.82%
+```DAX
+Conversion Rate = DIVIDE([Purchases], [Clicks], 0)
+```
 * Purchase Rate: 0.57%
+```DAX
+Purchase Rate = DIVIDE([Purchases], [Impressions], 0)
+```
 * Total Budget: $ 2,535.9K
+```DAX
+Total Budget = SUM(campaigns[total_budget])
+```
 * Avg. Budget/Campaign: $ 50.7K
+```DAX
+Avg. Budget per Campaign = AVERAGE(campaigns[total_budget])
+```
+
+## Other DAX Formulas Used for Other Measures, Calculated Columns & Tables
+
+### 1. Select Dynamic Measure
+```DAX
+Select Dynamic Measure = {
+    ("Impressions", NAMEOF('ad_events'[Impressions]), 0),
+    ("Engagements", NAMEOF('ad_events'[Engagements]), 1),
+    ("Clicks", NAMEOF('ad_events'[Clicks]), 2),
+    ("Shares", NAMEOF('ad_events'[Shares]), 3),
+    ("Comments", NAMEOF('ad_events'[Comments]), 4),
+    ("Purchases", NAMEOF('ad_events'[Purchases]), 5)
+}
+```
+
+### 2. Dynamic Title
+```DAX
+Dynamic Title = IF('Select Dynamic Measure'[Select Dynamic Measure Order] = 0, "Impressions",
+                IF('Select Dynamic Measure'[Select Dynamic Measure Order] = 1, "Engagements",
+                IF('Select Dynamic Measure'[Select Dynamic Measure Order] = 2, "Clicks",
+                IF('Select Dynamic Measure'[Select Dynamic Measure Order] = 3, "Shares",
+                IF('Select Dynamic Measure'[Select Dynamic Measure Order] = 4, "Comments",
+                IF('Select Dynamic Measure'[Select Dynamic Measure Order] = 5, "Purchases", "Other"
+                ))))))
+```
+
+### 3. Gender Donut Chart Title
+```DAX
+Gender Donut Chart Title = SELECTEDVALUE('Select Dynamic Measure'[Dynamic Title]) & " by Gender"
+```
+
+### 4. Age Stacked Column Chart Title
+```DAX
+Age Stacked Column Chart Title = SELECTEDVALUE('Select Dynamic Measure'[Dynamic Title]) & " by Age"
+```
+
+### 5. Country Map Chart Title
+```DAX
+Country Map Chart Title = SELECTEDVALUE('Select Dynamic Measure'[Dynamic Title]) & " by Country"
+```
+
+### 6. Event Date
+```DAX
+Event Date = DATEVALUE(ad_events[timestamp])
+```
+
+### 7. Calendar Table
+```DAX
+Calendar Table = CALENDAR(MIN(ad_events[Event Date]), MAX(ad_events[Event Date]))
+```
+
+### 8. Month Name
+```DAX
+Month Name = FORMAT('Calendar Table'[Date], "mmm")
+```
+
+### 9. Day Name
+```DAX
+Day Name = FORMAT('Calendar Table'[Date], "ddd")
+```
+
+### 10. Day Number
+```DAX
+Day Number = FORMAT('Calendar Table'[Date], "d")
+```
+
+### 11. Weekday
+```DAX
+Weekday = WEEKDAY('Calendar Table'[Date], 2)
+```
+
+### 12. Week Number
+```DAX
+Week Number = WEEKNUM('Calendar Table'[Date], 2)
+```
+
+### 13. Calendar Matrix Visual Title
+```DAX
+Calendar Matrix Visual Title = "Analysis by Month"
+```
+
+### 14. Weekly Stacked Column Chart Title
+```DAX
+Weekly Stacked Column Chart Title = "Weekly " & SELECTEDVALUE('Select Dynamic Measure'[Dynamic Title]) & " Trend"
+```
+
+### 15. Event Hour
+```DAX
+Event Hour = HOUR(ad_events[timestamp])
+```
+
+### 16. Hourly Area Chart Title
+```DAX
+Hourly Area Chart Title = "Hourly " & SELECTEDVALUE('Select Dynamic Measure'[Dynamic Title]) & " Trend"
+```
+
+### 17. Calendar Matrix 2 Visual Title
+```DAX
+Calendar Matrix 2 Visual Title = "Analysis by Ad Type"
+```
+
+## Data Modelling
+
