@@ -264,9 +264,20 @@ The dashboard suite consists of three interactive pages:
 * **Instagram Dashboard** – Mirrors the Facebook view, enabling clear platform-to-platform comparison using identical metrics.
 * **Calendar Tooltip Page (Hidden)** – Displays KPI values at a daily granularity when users hover over the calendar heatmap, offering additional contextual detail.
 
+<img width="1487" height="895" alt="Calendar Tooltip Page SS" src="https://github.com/user-attachments/assets/5c311578-a0a3-4568-8758-96e795a0fc62" />
+
 Each dashboard is equipped with user-controlled filters including dynamic KPI selection, campaign name, and audience target interests, allowing deeper analysis aligned with business objectives.
 
 ## Business Recommendations
 
-* **Increase investment** in Facebook for campaigns prioritized toward conversions and purchase outcomes, as the platform demonstrates greater commercial effectiveness.
-* 
+* **Increase investment in Facebook** for campaigns prioritized toward conversions and purchase outcomes, as the platform demonstrates greater commercial effectiveness.
+* **Prioritize Stories and Carousel formats**, both of which show strong engagement and conversion metrics compared to static Image and Video placements.
+* **Target female audiences aged 20–35** with refined messaging, as this group consistently delivers the highest interaction and purchase volume.
+* Strengthen advertising focus in **Europe and North America**, while running lower-risk testing campaigns in emerging regions.
+* **Schedule campaigns during peak evening hours** to leverage higher user activity and interaction likelihood.
+* Improve performance of **Image and Video ads** by optimizing creatives with stronger call-toaction, relevance, and personalization.
+* Utilize **retargeting flows** to convert high-intent users who click or engage but do not immediately purchase.
+
+## Conclusion
+
+This analysis provides a clear and insightful understanding of advertising performance across Meta platforms. Facebook leads in driving conversions and interactions, while Instagram contributes strongly to impressions and visual brand exposure. Audience and trend insights highlight where budgets and strategies should be focused to maximize results. The dashboards offer decision-makers an actionable and data-driven view of how to optimize campaign structure, audience targeting, and ad type selection for greater marketing effectiveness and improved ROI.
