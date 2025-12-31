@@ -23,10 +23,27 @@ The analysis is based on campaign-level and event-level Meta ad performance data
 
 The data was integrated, cleaned, and transformed to support accurate performance measurement and platform-specific insights.
 
-## Key Performance Indicators (KPIs)
+## Tools Used
+
+* Microsoft Excel: Data Source.
+* Microsoft Power BI: Data Cleaning, Transformation & Visualisation.
+
+## Key Performance Indicators (KPIs) & DAX Formulas Used for Each
 
 Separate dashboards were created for Facebook and Instagram to analyze each platform individually.
 
 ### Facebook KPIs
 
-* 
+* Impressions: 216K
+```DAX
+Impressions = COUNTROWS(FILTER(ad_events, ad_events[event_type] = "Impression"))
+```
+* Clicks: 25.4K
+```DAX
+Clicks = COUNTROWS(FILTER(ad_events, ad_events[event_type] = "Click"))
+```
+* Shares: 1.3K
+```DAX
+Shares = COUNTROWS(FILTER(ad_events, ad_events[event_type] = "Share"))
+```
+* Comments: 2.6K
