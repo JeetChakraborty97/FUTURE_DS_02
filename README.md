@@ -236,3 +236,13 @@ Calendar Matrix 2 Visual Title = "Analysis by Ad Type"
 
 ## Data Modelling
 
+A Snowflake Schema was created where:
+
+* Established a relationship between "campaigns" & "ads" tables with 'one to many' cardinality via "campaign_id" where the cross-filter direction is 'single'.
+* Established a relationship between "ads" & "ad_events" tables with 'one to many' cardinality via "ad_id" where the cross-filter direction is 'single'.
+* Established a relationship between "users" & "ad_events" tables with 'one to many' cardinality via "user_id" where the cross-filter direction is 'single'.
+* Established a relationship between "Calendar Table" & "ad_events" tables with 'one to many' cardinality via "Event Date" where the cross-filter direction is 'single'.
+* No physical relationship established between "Select Dynamic Measure" & other tables. Instead, it is used as a disconnected table to enable dynamic measure selection in charts, slicers and DAX logic.
+
+## Key Insights
+
