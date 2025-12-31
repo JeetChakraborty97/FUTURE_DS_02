@@ -266,6 +266,8 @@ The dashboard suite consists of three interactive pages:
 
 <img width="1487" height="895" alt="Calendar Tooltip Page SS" src="https://github.com/user-attachments/assets/5c311578-a0a3-4568-8758-96e795a0fc62" />
 
+<img width="511" height="538" alt="Heatmap SS" src="https://github.com/user-attachments/assets/cf3be406-8ab6-464e-82d1-33bb13043125" />
+
 Each dashboard is equipped with user-controlled filters including dynamic KPI selection, campaign name, and audience target interests, allowing deeper analysis aligned with business objectives.
 
 ## Business Recommendations
