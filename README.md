@@ -47,3 +47,65 @@ Clicks = COUNTROWS(FILTER(ad_events, ad_events[event_type] = "Click"))
 Shares = COUNTROWS(FILTER(ad_events, ad_events[event_type] = "Share"))
 ```
 * Comments: 2.6K
+```DAX
+Comments = COUNTROWS(FILTER(ad_events, ad_events[event_type] = "Comment"))
+```
+* Engagements: 29.3K
+```DAX
+Engagements = [Shares] + [Clicks] + [Comments]
+```
+* Purchases: 1.3K
+```DAX
+Purchases = COUNTROWS(FILTER(ad_events, ad_events[event_type] = "Purchase"))
+```
+* CTR (Click-Through Rate): 11.76%
+```DAX
+CTR (Click Through Rate) = DIVIDE([Clicks], [Impressions], 0)
+```
+* Engagement Rate: 13.56%
+```DAX
+Engagement Rate = DIVIDE([Engagements], [Impressions], 0)
+```
+* Conversion Rate (CR): 5.21%
+```DAX
+Conversion Rate = DIVIDE([Purchases], [Clicks], 0)
+```
+* Purchase Rate: 0.61%
+```DAX
+Purchase Rate = DIVIDE([Purchases], [Impressions], 0)
+```
+* Total Budget: $ 2,535.9K
+```DAX
+Total Budget = SUM(campaigns[total_budget])
+```
+* Avg. Budget/Campaign: $ 50.7K
+```DAX
+Avg. Budget per Campaign = AVERAGE(campaigns[total_budget])
+```
+
+### Instagram KPIs
+
+* Impressions: 123.8K
+```DAX
+Impressions = COUNTROWS(FILTER(ad_events, ad_events[event_type] = "Impression"))
+```
+* Clicks: 14.7K
+```DAX
+Clicks = COUNTROWS(FILTER(ad_events, ad_events[event_type] = "Click"))
+```
+* Shares: 682
+```DAX
+Shares = COUNTROWS(FILTER(ad_events, ad_events[event_type] = "Share"))
+```
+* Comments: 1.5K
+```DAX
+Comments = COUNTROWS(FILTER(ad_events, ad_events[event_type] = "Comment"))
+```
+* Engagements: 16.8K
+* Purchases: 708
+* CTR (Click Through Rate): 11.86%
+* Engagement Rate: 13.60%
+* Conversion Rate: 4.82%
+* Purchase Rate: 0.57%
+* Total Budget: $ 2,535.9K
+* Avg. Budget/Campaign: $ 50.7K
